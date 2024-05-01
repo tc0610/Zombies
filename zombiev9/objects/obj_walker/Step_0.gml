@@ -1,6 +1,9 @@
  /// @description Insert description here
 // You can write your code in this editor
 
+if state == 1{
+	sprite_index = spr_enemy_dorm	
+}
 if (!GAME_PAUSED){
 	// Inherit the parent event
 	event_inherited();
@@ -15,13 +18,13 @@ if (!GAME_PAUSED){
 		//sleep
 		case 1:
 			mspd = 0
-			image_index = 0
 		break;
 	}
 
 	//Path
 	chaseTimer--
 	if chaseTimer <= 0{
+		sprite_index = spr_enemyWalk
 		if point_distance(x,y,follow_tgt.x,follow_tgt.y) > 5 {
 			path_x = follow_tgt.x
 			path_y = follow_tgt.y
@@ -45,6 +48,7 @@ if (!GAME_PAUSED){
 
 	//alert
 	if collision_circle(x,y,alertRadius,obj_player,false,false) and alert > 0{
+		sprite_index = spr_enemyAtk
 		if !obj_player.sneak and obj_player.moving{
 			alert-= 10
 		}else if obj_player.moving{
