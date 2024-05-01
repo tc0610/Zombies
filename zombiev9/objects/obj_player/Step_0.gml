@@ -155,27 +155,68 @@ if (!GAME_PAUSED){
 	#endregion
 
 	//Shooting
-	var attack_cooldown = 0; // The cooldown timer
-	var attacking = false; // Whether the player is currently attacking
-	var attack_duration = sprite_get_number(spr_slashB)
+	#region
+		if shootTimer > 0{
+			shootTimer--	
+		}
 	
-	// Check if the mouse button is pressed and the cooldown is over
-	if (mouse_check_button_pressed(mb_left) && attack_cooldown <= 0) {
-	    attacking = true;
-	    attack_cooldown = attack_duration; // Set the cooldown to the sprite's duration
-	    sprite_index = chooseSpr(sprite_index)
-	    image_speed =0.1; // Play the animation over the duration
-	}
-
-	if (attack_cooldown > 0) {
-		attack_cooldown--;
-	} 
-	else if (attacking) {
+		var _spread = weapon.spread
+		var _spreadDiv = _spread / max(weapon.bulletNum-1,1)
+	
+		if selectedWeapon == 0{
+			if shootKey and shootTimer <= 0{
+				attacking = true
+				shootTimer = weapon.cooldown
+			
+				//create
+				var _xoffset = lengthdir_x(weapon.length + weaponOffset,aimDir)
+				var _yoffset = lengthdir_y(weapon.length + weaponOffset,aimDir)
+		
+				for(var i=0;i<weapon.bulletNum;i++){
+					var _bullet = instance_create_depth(x + _xoffset,centerY + _yoffset,depth -100,weapon.bulletObj)
+			
+					with(_bullet){
+						dir = other.aimDir - _spread/2 + _spreadDiv*i
+				
+						if dirFix{
+							image_angle = dir
+						}
+					}
+				}
+			}	
+		}else if selectedWeapon == 1{
+			if chargeKey and shootTimer <= 0{
+				charge++
+			}else if mouse_check_button_released(mb_left) and shootTimer <= 0{
+				attacking = true
+			
+				shootTimer = weapon.cooldown
+				//create
+				var _xoffset = lengthdir_x(weapon.length + weaponOffset,aimDir)
+				var _yoffset = lengthdir_y(weapon.length + weaponOffset,aimDir)
+			
+				for(var i=0;i<weapon.bulletNum;i++){
+					var _bullet = instance_create_depth(x + _xoffset,centerY + _yoffset,depth -100,weapon.bulletObj)
+			
+					with(_bullet){
+						dir = other.aimDir - _spread/2 + _spreadDiv*i
+				
+						if dirFix{
+							image_angle = dir
+						}
+						if obj_player.charge >= obj_player.maxCharge{
+							damage = 10	
+						}
+					}
+				}
+			
+				charge = 0
+			}
+		}
+	
 		attacking = false
-		sprite_index = spr_iF_knife
-	}
-	
 	#endregion
+
 
 	//Interact
 	#region
