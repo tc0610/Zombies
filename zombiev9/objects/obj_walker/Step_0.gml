@@ -1,30 +1,27 @@
  /// @description Insert description here
 // You can write your code in this editor
 
-if state == 1{
-	sprite_index = spr_enemy_dorm	
-}
+
+
 if (!GAME_PAUSED){
 	// Inherit the parent event
 	event_inherited();
-
-	//state machine
-	switch(state){
-		//chase
-		case 0:
-			mspd = chaseSpd
-		break;
 	
-		//sleep
-		case 1:
-			mspd = 0
-		break;
+	if state == wstates.sleep{
+		sprite_index = spr_enemy_dorm
+		mspd = 0
+	}else if state == wstates.walk{
+		sprite_index = spr_enemyWalk
+		mspd = chaseSpd
+	}else{
+		sprite_index = spr_enemyAtk
 	}
+	//state machine
+
 
 	//Path
 	chaseTimer--
 	if chaseTimer <= 0{
-		sprite_index = spr_enemyWalk
 		if point_distance(x,y,follow_tgt.x,follow_tgt.y) > 5 {
 			path_x = follow_tgt.x
 			path_y = follow_tgt.y
@@ -47,8 +44,13 @@ if (!GAME_PAUSED){
 	}
 
 	//alert
+	if collision_circle(x,y-16,32,obj_player,false,false){
+		state = wstates.attack
+	}else if alertStatus{
+		state = wstates.walk
+	}
+	
 	if collision_circle(x,y,alertRadius,obj_player,false,false) and alert > 0{
-		sprite_index = spr_enemyAtk
 		if !obj_player.sneak and obj_player.moving{
 			alert-= 10
 		}else if obj_player.moving{
@@ -76,7 +78,6 @@ if (!GAME_PAUSED){
 
 	if alert <= 0 or alertStatus{
 		alertStatus = true
-		state = 0
 	}
 
 	if !breathing{

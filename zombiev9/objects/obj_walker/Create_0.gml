@@ -27,6 +27,13 @@ prevx = floor(x/GRID_WIDTH)
 prevy = floor(y/GRID_HEIGHT)
 
 face = 1
-state = 1
+state = wstates.sleep
 
 damage =5
+
+enum wstates{
+	sleep,
+	attack,
+	walk
+	
+}

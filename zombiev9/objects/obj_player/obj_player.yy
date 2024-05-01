@@ -32,6 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_playerHitbox",
+    "path":"sprites/spr_playerHitbox/spr_playerHitbox.yy",
+  },
   "visible":true,
 }
