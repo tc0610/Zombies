@@ -10,8 +10,7 @@ if (!GAME_PAUSED){
 	downKey = keyboard_check(ord("S"))
 	shootKey = mouse_check_button_pressed(mb_left)
 	chargeKey = mouse_check_button(mb_left)
-	swapKeyPressed = keyboard_check_pressed(ord("E"))
-	sneakKey = keyboard_check_pressed(ord("Q"))
+	sneakKey = keyboard_check_pressed(vk_lshift)
 	confirmKey = keyboard_check(ord("F"))
 	#endregion
 
@@ -38,32 +37,38 @@ if (!GAME_PAUSED){
 		if place_meeting(x,y+vspd,obj_wall){
 			vspd = 0
 		}
-	
+		
+		if attacking{
+			hspd = 0
+			vspd = 0
+		}
+		
 		if hspd != 0 or vspd != 0{
 			moving = true	
 		}else{
 			moving = false
 		}
+		
 		//Sneak
-		if sneakKey{
-			if sneak{
-				sneak = 0
-			}else{
-				sneak = 1
+		if !attacking{
+			if sneakKey{
+				if sneak{
+					state = pstates.walking
+					moveSpd = walkSpd
+					sneak = 0
+				}else{
+					state = pstates.sneaking
+					moveSpd = sneakSpd
+					sneak = 1
+				}
 			}
 		}
-	
-		if sneak{
-			moveSpd = sneakSpd	
-		}else{
-			moveSpd = walkSpd
-		}
-	
 		depth = -bbox_bottom
 	#endregion
 
 	//Damaged
 	get_damaged(obj_damagePlayer,true)
+	
 	if hp <=0{
 		room_restart()
 		hp = maxhp
@@ -81,17 +86,30 @@ if (!GAME_PAUSED){
 
 	//Spriting
 	#region
-	face = round(aimDir/90)
+	if !attacking{
+		face = round(aimDir/90)
+	}
+	
 	if face == 4{
 		face = 0
 	}
-
-	if sneak{
-		sprite_index = sprite[face]
+	
+	if state == pstates.sneaking{
+		if moving{
+			sprite_index = snkwalk[face]
+		}else{
+			sprite_index = snkidle[face]
+		}
+	}else if state == pstates.walking{
+		if moving{
+			sprite_index = walk[face]
+		}else{
+			sprite_index = walkidle[face]
+		}
+	}else if state == pstates.slashing{
+		sprite_index = slash[face]
 	}
-	else{
-		sprite_index = sprite[face + 4]
-	}
+	
 	//Move
 	if keyboard_check(ord("W"))
 	or keyboard_check(ord("A"))
@@ -99,59 +117,17 @@ if (!GAME_PAUSED){
 	or keyboard_check(ord("D")){        
 		MoveCollide()
 	}
-	else{
-		switch (sprite_index) {
-		    case spr_wL_knife:
-				sprite_index = spr_iL_knife
-				break;
-			case spr_wR_knife:
-		        sprite_index = spr_iR_knife
-		        break;
-			case spr_wD_knife:
-		        sprite_index = spr_iF_knife
-		        break;
-			case spr_wU_knife:
-		        sprite_index = spr_iB_knife
-		        break;	
-			case spr_sneakWRK:
-				sprite_index = spr_idleSR
-		        break;	
-			case spr_sneakWUK:
-				sprite_index = spr_idleSB
-		        break;	
-			case spr_sneakWLK:
-				sprite_index = spr_idleSL
-		        break;	
-			case spr_sneakWDK:
-				sprite_index = spr_idleSF
-		        break;					
-			
-		}
-	}
-	
 	
 	#endregion
 
 	//Weapon Swap
 	#region
 		if selectedWeapon = 0{
-			weaponOffset = pistolOffset	
-		}else{
 			weaponOffset = knifeOffset
 		}
+		
 		var _playerWeapons = global.PlayerWeapons
 	
-		//Swap
-		if swapKeyPressed{
-			selectedWeapon++;
-		
-			if(selectedWeapon >= array_length(_playerWeapons)){
-				selectedWeapon = 0
-			}
-		
-			weapon = _playerWeapons[selectedWeapon]
-		
-		}
 	#endregion
 
 	//Shooting
@@ -163,33 +139,13 @@ if (!GAME_PAUSED){
 		var _spread = weapon.spread
 		var _spreadDiv = _spread / max(weapon.bulletNum-1,1)
 	
-		if selectedWeapon == 0{
-			if shootKey and shootTimer <= 0{
-				attacking = true
-				shootTimer = weapon.cooldown
-			
-				//create
-				var _xoffset = lengthdir_x(weapon.length + weaponOffset,aimDir)
-				var _yoffset = lengthdir_y(weapon.length + weaponOffset,aimDir)
-		
-				for(var i=0;i<weapon.bulletNum;i++){
-					var _bullet = instance_create_depth(x + _xoffset,centerY + _yoffset,depth -100,weapon.bulletObj)
-			
-					with(_bullet){
-						dir = other.aimDir - _spread/2 + _spreadDiv*i
-				
-						if dirFix{
-							image_angle = dir
-						}
-					}
-				}
-			}	
-		}else if selectedWeapon == 1{
+	 if selectedWeapon == 0{
 			if chargeKey and shootTimer <= 0{
 				charge++
 			}else if mouse_check_button_released(mb_left) and shootTimer <= 0{
 				attacking = true
-			
+				state = pstates.slashing
+				
 				shootTimer = weapon.cooldown
 				//create
 				var _xoffset = lengthdir_x(weapon.length + weaponOffset,aimDir)
@@ -210,11 +166,18 @@ if (!GAME_PAUSED){
 					}
 				}
 			
-				charge = 0
-			}
+			charge = 0
 		}
+	 }
 	
+	if shootTimer <= 0{
 		attacking = false
+		if sneak{
+			state = pstates.sneaking	
+		}else{
+			state = pstates.walking	
+		}
+	}
 	#endregion
 
 
