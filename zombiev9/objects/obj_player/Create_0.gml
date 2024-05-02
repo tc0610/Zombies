@@ -5,6 +5,7 @@ hasControl = false
 
 //Movement
 #region
+hit = 0
 maxhp = 20
 hp = 20
 
@@ -27,7 +28,8 @@ state = pstates.walking
 enum pstates {
 	walking,
 	slashing,
-	sneaking
+	sneaking,
+	charging
 }
 
 sneak = 0
@@ -67,6 +69,17 @@ slash[1] = spr_slashB
 slash[2] = spr_slashL
 slash[3] = spr_slashF
 
+charged[0] = spr_chargeR
+charged[1] = spr_chargeB
+charged[2] = spr_chargeL
+charged[3] = spr_chargeF
+
+uncharge[0] = spr_unchargeR
+uncharge[1] = spr_unchargeB
+uncharge[2] = spr_unchargeL
+uncharge[3] = spr_unchargeF
+
+
 
 
 centerYOffset = -20
@@ -83,7 +96,7 @@ face = 0
 #region
 shootTimer = 0
 charge = 0
-maxCharge = 100
+maxCharge = 60
 
 //Weapon Inventory
 array_push(global.PlayerWeapons,global.WeaponList.knife)

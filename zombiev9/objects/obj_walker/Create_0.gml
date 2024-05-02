@@ -12,6 +12,8 @@ maxRad =200
 minRad = 80
 breathing = false
 
+hurt = 0
+
 mspd = .5
 chaseTimer = 0
 chaseTimerMax = random_range(0,60)

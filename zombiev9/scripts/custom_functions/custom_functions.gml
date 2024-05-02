@@ -45,6 +45,7 @@ function get_damaged(_damageObj,_iframes = false){
 		image_alpha = 1	
 	}
 	
+	
 	//Take Damage
 	if place_meeting(x,y,_damageObj){	
 		//List of damage
@@ -67,6 +68,7 @@ function get_damaged(_damageObj,_iframes = false){
 				}
 				
 				hp -= _inst.damage
+
 				_hitConfirm = true
 				
 				_inst.hitConfirm = true

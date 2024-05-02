@@ -38,7 +38,7 @@ if (!GAME_PAUSED){
 			vspd = 0
 		}
 		
-		if attacking{
+		if attacking or charge > 0{
 			hspd = 0
 			vspd = 0
 		}
@@ -142,6 +142,12 @@ if (!GAME_PAUSED){
 	 if selectedWeapon == 0{
 			if chargeKey and shootTimer <= 0{
 				charge++
+				
+				if obj_player.charge < obj_player.maxCharge{
+					sprite_index = uncharge[face]
+				}else{
+					sprite_index = charged[face]
+				}
 			}else if mouse_check_button_released(mb_left) and shootTimer <= 0{
 				attacking = true
 				state = pstates.slashing

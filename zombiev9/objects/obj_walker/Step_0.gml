@@ -7,6 +7,7 @@ if (!GAME_PAUSED){
 	// Inherit the parent event
 	event_inherited();
 	
+	//state machine
 	if state == wstates.sleep{
 		sprite_index = spr_enemy_dorm
 		mspd = 0
@@ -16,8 +17,8 @@ if (!GAME_PAUSED){
 	}else{
 		sprite_index = spr_enemyAtk
 	}
-	//state machine
-
+	
+	
 
 	//Path
 	chaseTimer--
@@ -44,6 +45,10 @@ if (!GAME_PAUSED){
 	}
 
 	//alert
+	if place_meeting(x,y,obj_damageEnemy){
+		hurt = 20
+	}
+	
 	if collision_circle(x,y-16,32,obj_player,false,false){
 		state = wstates.attack
 	}else if alertStatus{
