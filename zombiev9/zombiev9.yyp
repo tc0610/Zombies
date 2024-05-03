@@ -39,7 +39,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"zombiev9",
   "resources":[
@@ -120,7 +120,6 @@
     {"id":{"name":"spr_shoot_r","path":"sprites/spr_shoot_r/spr_shoot_r.yy",},},
     {"id":{"name":"spr_slashB","path":"sprites/spr_slashB/spr_slashB.yy",},},
     {"id":{"name":"spr_slashF","path":"sprites/spr_slashF/spr_slashF.yy",},},
-    {"id":{"name":"spr_unchargeF","path":"sprites/spr_unchargeF/spr_unchargeF.yy",},},
     {"id":{"name":"spr_slashL","path":"sprites/spr_slashL/spr_slashL.yy",},},
     {"id":{"name":"spr_slashR","path":"sprites/spr_slashR/spr_slashR.yy",},},
     {"id":{"name":"spr_sneakWDK","path":"sprites/spr_sneakWDK/spr_sneakWDK.yy",},},
@@ -134,6 +133,7 @@
     {"id":{"name":"spr_tiles","path":"sprites/spr_tiles/spr_tiles.yy",},},
     {"id":{"name":"spr_tileWall","path":"sprites/spr_tileWall/spr_tileWall.yy",},},
     {"id":{"name":"spr_unchargeB","path":"sprites/spr_unchargeB/spr_unchargeB.yy",},},
+    {"id":{"name":"spr_unchargeF","path":"sprites/spr_unchargeF/spr_unchargeF.yy",},},
     {"id":{"name":"spr_unchargeL","path":"sprites/spr_unchargeL/spr_unchargeL.yy",},},
     {"id":{"name":"spr_unchargeR","path":"sprites/spr_unchargeR/spr_unchargeR.yy",},},
     {"id":{"name":"spr_walker","path":"sprites/spr_walker/spr_walker.yy",},},
