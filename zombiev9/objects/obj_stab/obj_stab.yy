@@ -38,5 +38,5 @@
     "path":"sprites/spr_knife_hitbox/spr_knife_hitbox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

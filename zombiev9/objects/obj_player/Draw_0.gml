@@ -13,8 +13,6 @@ draw_self()
 //HP
 draw_text(x,y,string(hp))
 
-draw_text(x,y+ 20,string(moving))
-draw_text(x,y+ 30,string(charge))
 if instance_exists(obj_interact){
 draw_text(x,y+ 40,string(obj_interact.current_trigger))
 }

@@ -7,7 +7,6 @@ if(hurt > 0){
 }else{
 	draw_sprite_ext(sprite_index,image_index,x,y, face, image_yscale,image_angle, image_blend,image_alpha)
 }
-draw_text(x,y,string(hp))
 if !alertStatus{
 	draw_circle(x,y,alertRadius,true)
 }

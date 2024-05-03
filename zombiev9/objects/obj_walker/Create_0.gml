@@ -14,14 +14,13 @@ breathing = false
 
 hurt = 0
 
-mspd = .5
 chaseTimer = 0
 chaseTimerMax = random_range(0,60)
-chaseSpd = .5
+chaseSpd = random_range(.5,.8)
 my_path = path_add()
 path_x = 0
 path_y = 0
-mspd = random_range(.5,1.2)
+mspd = random_range(.5,.8)
 follow_tgt = obj_player
 startx = x
 starty = y

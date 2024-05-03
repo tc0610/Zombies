@@ -49,7 +49,7 @@ if (!GAME_PAUSED){
 		hurt = 20
 	}
 	
-	if collision_circle(x,y-16,32,obj_player,false,false){
+	if collision_circle(x,y-16,70,obj_player,false,false){
 		state = wstates.attack
 	}else if alertStatus{
 		state = wstates.walk
