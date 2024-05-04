@@ -27,7 +27,7 @@ if state == dstates.open{
 		obj_player.y = targety
 		obj_player.startx = targetx
 		obj_player.starty = targety
-		
+		audio_stop_all()
 	}
 	
 }
