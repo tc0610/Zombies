@@ -3,6 +3,30 @@
 event_inherited()
 x += hspd
 y += vspd
+
+if direction > 90 and direction < 270{
+	face = 1	
+}else{
+	face = -1	
+}
+
+if place_meeting(x,y,obj_damageEnemy){
+	hurt = 20
+}
+
+if state == states.idle{
+	idletimer--
+	var newstate = random_range(0,2)
+	if idletimer <= 0{
+		idletimer = idletimermax
+		if newstate <= 1{
+				state = states.charge	
+		}else{
+				state = states.shooting	
+		}
+	}
+}
+
 if state == states.charge{
 	acceltimer--
 	if moveSpd < maxSpd and acceltimer <= 0{
@@ -33,19 +57,13 @@ if state == states.charge{
 
 if state == states.stunned{
 	stuntimer--
-	var newstate = random_range(0,1)
 	if stuntimer <= 0{
 		stuntimer = stuntimermax
-		if newstate <= 1{
-			state = states.charge	
-		}else{
-			state = states.shooting	
-		}
+		state = states.idle
 	}
 }
 
 if state == states.shooting{
-	
-	
-	
+	instance_create_depth(x,y,0,obj_splinters)
+	state = states.idle
 }

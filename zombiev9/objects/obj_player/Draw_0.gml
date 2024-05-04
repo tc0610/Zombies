@@ -11,7 +11,6 @@ draw_self()
 //}
 
 //HP
-draw_text(x,y,string(hp))
 
 if instance_exists(obj_interact){
 draw_text(x,y+ 40,string(obj_interact.current_trigger))

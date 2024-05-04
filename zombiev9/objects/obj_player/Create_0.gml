@@ -13,7 +13,7 @@ startx = x
 starty = y
 
 moveDir = 0
-moveSpd = 3
+moveSpd = 4
 sneakSpd = .5
 walkSpd = moveSpd
 

@@ -3,7 +3,7 @@
 event_inherited()
 lockin = false
 
-hp = 20
+hp = 10
 maxhp = hp
 moveSpd = 0
 accel = 3
@@ -12,9 +12,13 @@ acceltimerMax = acceltimer
 maxSpd = 20
 hspd = 0
 vspd = 0
-
-stuntimer = 300
+face = 1
+hurt = 0
+idletimer = 60
+idletimermax = idletimer
+stuntimer =420
 stuntimermax = stuntimer
+damage = 5
 
 enum states{
 	idle,
@@ -23,4 +27,4 @@ enum states{
 	shooting
 }
 
-state = states.charge
+state = states.idle
