@@ -11,7 +11,7 @@ if (!GAME_PAUSED){
 	shootKey = mouse_check_button_pressed(mb_left)
 	chargeKey = mouse_check_button(mb_left)
 	sneakKey = keyboard_check_pressed(vk_lshift)
-	confirmKey = keyboard_check(ord("F"))
+	confirmKey = keyboard_check(ord("E"))
 	#endregion
 
 	//Movement
@@ -31,10 +31,10 @@ if (!GAME_PAUSED){
 		vspd = lengthdir_y(_spd,moveDir)
 
 		//Collision
-		if place_meeting(x+hspd,y,obj_wall){
+		if place_meeting(x+hspd,y,obj_wall) or place_meeting(x+hspd,y,obj_door){
 			hspd = 0
 		}
-		if place_meeting(x,y+vspd,obj_wall){
+		if place_meeting(x,y+vspd,obj_wall) or place_meeting(x,y+vspd,obj_door){
 			vspd = 0
 		}
 		
@@ -200,5 +200,14 @@ if (!GAME_PAUSED){
 		}
 	}
 	#endregion
+	//Door
 	
+	var _door= collision_circle(x,y,64,obj_door,false,true)
+	if _door != noone and confirmKey{
+		if((_door.needAccess and hasAccess) or (_door.needControl and hasControl) or (!_door.needAccess and !_door.needControl)){
+				_door.state = dstates.open
+		}
+	}
+	
+
 }

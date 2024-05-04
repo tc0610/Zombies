@@ -7,3 +7,10 @@ var targety = 0
 needAccess = false
 needControl = false
 opened = false 
+optimer = 0
+maxoptimer = 90
+state = dstates.closed
+enum dstates {
+	closed,
+	open
+}

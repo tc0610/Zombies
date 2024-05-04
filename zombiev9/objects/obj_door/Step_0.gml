@@ -8,20 +8,26 @@
 //}
 
 depth = -bbox_bottom
-sprite_set_speed(sprite_index,0,spritespeed_framespersecond)
+if state == dstates.closed{
+	sprite_index = spr_door
+}
 
-if collision_circle(x,y,25,obj_player,false,true){
-	if((needAccess and obj_player.hasAccess) or (needControl and obj_player.hasControl) or (!needAccess and !needControl)){
-		sprite_set_speed(sprite_index,6,spritespeed_framespersecond)
+if state == dstates.open{
+	sprite_index = spr_dooropened
+	if optimer < maxoptimer{
+		optimer++	
+	}else{
+		optimer = 0
 		if (image_index >= sprite_get_number(sprite_index) - 1) {
 			// stop animation after 1 run
-			sprite_set_speed(sprite_index, 0, spritespeed_framespersecond);
+		sprite_set_speed(sprite_index, 0, spritespeed_framespersecond);
 		}
-			room_goto(targetrm)
-			obj_player.x = targetx
-			obj_player.y = targety
-			obj_player.startx = targetx
-			obj_player.starty = targety
+		room_goto(targetrm)
+		obj_player.x = targetx
+		obj_player.y = targety
+		obj_player.startx = targetx
+		obj_player.starty = targety
+		
 	}
 	
 }
