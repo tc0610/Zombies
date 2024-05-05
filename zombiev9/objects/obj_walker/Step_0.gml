@@ -14,8 +14,11 @@ if (!GAME_PAUSED){
 	}else if state == wstates.walk{
 		sprite_index = spr_enemyWalk
 		mspd = chaseSpd
-	}else{
+	}else if state == wstates.attack{
 		sprite_index = spr_enemyAtk
+		if !audio_is_playing(slashsnd){
+			audio_play_sound(slashsnd, 10, false);
+		}
 	}
 	
 	
@@ -49,7 +52,7 @@ if (!GAME_PAUSED){
 		hurt = 20
 	}
 	
-	if collision_circle(x,y-16,70,obj_player,false,false){
+	if collision_circle(x,y-16,70,obj_player,false,false) and !state == wstates.sleep{
 		state = wstates.attack
 	}else if alertStatus{
 		state = wstates.walk
@@ -63,6 +66,8 @@ if (!GAME_PAUSED){
 		}
 		else if alert < 100 and !obj_player.moving{
 			alert++	
+		}else if obj_player.attacking{
+			alert-= 50	
 		}
 	}else if alert < maxAlert{
 		alert++
@@ -77,12 +82,17 @@ if (!GAME_PAUSED){
 		}
 	}
 	ds_list_destroy(_enemylist)
+	
 	if hp < maxhp{
 		alertStatus = true	
 	}
 
 	if alert <= 0 or alertStatus{
 		alertStatus = true
+		if rattle == 0 and hp > 0{
+			audio_play_sound(snd_rattle, 10, false);
+			rattle = 1
+		}
 	}
 
 	if !breathing{

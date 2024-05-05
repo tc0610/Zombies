@@ -15,8 +15,12 @@ if state == dstates.closed{
 if state == dstates.open{
 	sprite_index = spr_dooropened
 	if optimer < maxoptimer{
+		if !audio_is_playing(snd_door){
+			audio_play_sound(snd_door,5,false)	
+		}
 		optimer++	
 	}else{
+		audio_stop_sound(snd_door)
 		optimer = 0
 		if (image_index >= sprite_get_number(sprite_index) - 1) {
 			// stop animation after 1 run

@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":3,
+  "compression":2,
   "conversionMode":0,
-  "duration":0.576,
+  "duration":0.391813,
   "name":"footstep",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"footstep.mp3",
   "type":0,
-  "volume":0.28,
+  "volume":0.24,
 }

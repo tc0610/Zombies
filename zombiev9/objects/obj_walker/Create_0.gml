@@ -11,6 +11,7 @@ alertRadius = 100
 maxRad =200
 minRad = 80
 breathing = false
+rattle = 0
 
 hurt = 0
 

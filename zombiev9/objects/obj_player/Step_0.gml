@@ -44,9 +44,13 @@ if (!GAME_PAUSED){
 		}
 		
 		if hspd != 0 or vspd != 0{
-			moving = true	
+			moving = true
+			if !audio_is_playing(footstep) and !sneak{
+				audio_play_sound(footstep, 10, true);
+			}
 		}else{
 			moving = false
+			audio_stop_sound(footstep)
 		}
 		
 		//Sneak
@@ -58,6 +62,7 @@ if (!GAME_PAUSED){
 					sneak = 0
 				}else{
 					state = pstates.sneaking
+					audio_stop_sound(footstep)
 					moveSpd = sneakSpd
 					sneak = 1
 				}
@@ -151,7 +156,8 @@ if (!GAME_PAUSED){
 			}else if mouse_check_button_released(mb_left) and shootTimer <= 0{
 				attacking = true
 				state = pstates.slashing
-				
+
+				audio_play_sound(slashsnd, 10, false);
 				shootTimer = weapon.cooldown
 				//create
 				var _xoffset = lengthdir_x(weapon.length + weaponOffset,aimDir)

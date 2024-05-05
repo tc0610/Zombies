@@ -13,7 +13,7 @@ draw_self()
 //HP
 
 if instance_exists(obj_interact){
-draw_text(x,y+ 40,string(obj_interact.current_trigger))
+//draw_text(x,y+ 40,string(obj_interact.current_trigger))
 }
 
 //Alert box

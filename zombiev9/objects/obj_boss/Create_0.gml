@@ -3,7 +3,7 @@
 event_inherited()
 lockin = false
 
-hp = 10
+hp = 200
 maxhp = hp
 moveSpd = 0
 accel = 3
