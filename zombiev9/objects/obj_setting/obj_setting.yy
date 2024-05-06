@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_sound_manager",
+  "%Name":"obj_setting",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_sound_manager",
+  "name":"obj_setting",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"obj_ui",
+    "path":"folders/Objects/obj_ui.yy",
   },
   "parentObjectId":null,
   "persistent":true,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_setting",
+    "path":"sprites/spr_setting/spr_setting.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

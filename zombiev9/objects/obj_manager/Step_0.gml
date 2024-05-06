@@ -6,3 +6,31 @@ if room == rm_lobby{
 		instance_destroy(obj_player)
 	}
 }
+
+if room == rm_start{
+	if (point_in_rectangle(mouse_x, mouse_y, _button_x, _button_y, _button_x + b_w, _button_y + b_h )) {
+		b_hovered = true
+		if (mouse_check_button_pressed(mb_left)) {
+			room_goto(Room1)
+		}
+	}
+	else{
+		b_hovered = false
+	}
+	
+}
+
+
+//REPLAY Button
+if room == rm_end{
+	if (point_in_rectangle(mouse_x, mouse_y, _button_x, _button_y, _button_x + b_w, _button_y + b_h )) {
+		r_hovered = true
+		if (mouse_check_button_pressed(mb_left)) {
+			room_goto(rm_start)
+		}
+	}
+	else{
+		r_hovered = false
+	}
+	
+}

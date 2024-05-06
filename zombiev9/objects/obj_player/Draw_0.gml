@@ -26,3 +26,6 @@ if instance_exists(obj_interact){
 	}
 }
 
+if (collision_circle(x, y-30, 25, obj_door, false, false)) {
+	 draw_sprite(spr_interact, 0, x, y-64)
+}
