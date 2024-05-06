@@ -8,7 +8,7 @@ responseOn = false
 activate_main = false
 //Stores interactables
 interactables = [obj_terminal0, 
-		obj_terminal1, obj_body1, obj_mainControl]
+		obj_terminal1, obj_body1, obj_mainControl, obj_terminal2]
 //4 is main control	
 totalNum = 4
 current_trigger = noone

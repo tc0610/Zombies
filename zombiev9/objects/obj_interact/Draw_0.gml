@@ -17,8 +17,13 @@ if responseOn{
 			break;
 
 		}
-		else if (j == 4 and current_trigger == 4){
+		else if (j == 3 and current_trigger == 3){
 			activate_main = true
+		}
+		
+		else if (j == 4 and current_trigger == 4){
+			draw_sprite(spr_ter002, 0, c_x, c_y)
+			break;
 		}
 			
 		else if (j == 2 and current_trigger == 2){
