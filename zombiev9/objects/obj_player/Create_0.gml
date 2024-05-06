@@ -83,10 +83,10 @@ uncharge[1] = spr_unchargeB
 uncharge[2] = spr_unchargeL
 uncharge[3] = spr_unchargeF
 
-dying[0] = spr_unchargeR
-dying[1] = spr_unchargeB
-dying[2] = spr_unchargeL
-dying[3] = spr_unchargeF
+dying[0] = spr_deadR
+dying[1] = spr_deadB
+dying[2] = spr_deadL
+dying[3] = spr_deadF
 
 
 centerYOffset = -20

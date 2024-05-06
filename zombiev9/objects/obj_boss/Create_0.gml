@@ -20,6 +20,12 @@ stuntimer =420
 stuntimermax = stuntimer
 damage = 5
 
+idle[0] = spr_biL
+idle[1] = spr_biR
+
+roll[0] = spr_bRollL
+roll[1] = spr_bRollR
+
 enum states{
 	idle,
 	charge,
@@ -28,3 +34,4 @@ enum states{
 }
 
 state = states.idle
+
