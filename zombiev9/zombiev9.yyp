@@ -96,6 +96,7 @@
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_biL","path":"sprites/spr_biL/spr_biL.yy",},},
     {"id":{"name":"spr_biR","path":"sprites/spr_biR/spr_biR.yy",},},
+    {"id":{"name":"spr_blob","path":"sprites/spr_blob/spr_blob.yy",},},
     {"id":{"name":"spr_blood","path":"sprites/spr_blood/spr_blood.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_bRollL","path":"sprites/spr_bRollL/spr_bRollL.yy",},},
