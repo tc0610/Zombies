@@ -26,6 +26,12 @@ if instance_exists(obj_interact){
 	}
 }
 
-if (collision_circle(x, y-30, 25, obj_door, false, false)) {
+if (collision_circle(x, y-30, 30, obj_door, false, false)) {
 	 draw_sprite(spr_interact, 0, x, y-64)
+}
+
+if room == rm_hallway{
+	if (collision_circle(x, y-30, 35, obj_wall, false, false)) {
+		 draw_sprite(spr_interact, 0, x, y-64)
+	}
 }

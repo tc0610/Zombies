@@ -95,7 +95,7 @@ centerY = y + centerYOffset
 weaponOffset = -20
 knifeOffset = -20
 aimDir = 0
-
+locked_num = 2
 face = 0
 #endregion
 
