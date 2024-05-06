@@ -1,10 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+var escapeKey = keyboard_check(ord("C"))
 
-if collision_circle(x,y,25,obj_player,false,true){
-	show_text = true 	
+if collision_circle(x,y,25,obj_player,false,true) and obj_player.confirmKey{
+	if !obj_player.hasAccess{
+		show_text = true 
+	}
+
 }
-else{
-	show_text = false	
+
+
+
+if escapeKey{
+	show_text = false
 }
