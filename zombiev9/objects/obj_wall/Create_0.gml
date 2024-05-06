@@ -3,3 +3,4 @@
 
 
 show_text = false
+text = noone

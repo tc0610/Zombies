@@ -18,7 +18,8 @@ if responseOn{
 
 		}
 		else if (j == 3 and current_trigger == 3){
-			activate_main = true
+			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
+			draw_text(c_x -210, c_y +80,dialogue1[1])
 		}
 		
 		else if (j == 4 and current_trigger == 4){
@@ -29,12 +30,20 @@ if responseOn{
 		else if (j == 2 and current_trigger == 2){
 			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
 			if obj_player.hasAccess{
-				draw_text(c_x -200, c_y +80,dialogue2[0])
+				draw_text(c_x -210, c_y +80,dialogue2[0])
 			}
 			else{
-				draw_text(c_x -200, c_y +80,dialogue1[0])
+				draw_text(c_x -210, c_y +80,dialogue1[0])
 				access = true
 			}
+			
+		
+		}
+		else if (j == 5 and current_trigger == 5){
+			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
+			draw_text(c_x -210, c_y +80,dialogue2[1])
+			obj_player.hasControl = true
+		
 			
 		
 		}

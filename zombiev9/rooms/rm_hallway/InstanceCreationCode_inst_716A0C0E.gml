@@ -1,0 +1,1 @@
+text = "lobby access is not granted."

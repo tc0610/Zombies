@@ -1,0 +1,1 @@
+text = "an access card is required to enter."

@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mainControl",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_wrong",
+  "eventList":[],
   "managed":true,
-  "name":"obj_mainControl",
+  "name":"obj_wrong",
   "overriddenProperties":[],
   "parent":{
     "name":"Terminal",
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_ter000",
+    "path":"sprites/spr_ter000/spr_ter000.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
