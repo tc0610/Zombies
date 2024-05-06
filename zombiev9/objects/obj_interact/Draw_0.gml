@@ -17,15 +17,26 @@ if responseOn{
 			break;
 
 		}
-		else if (j == 4 and current_trigger == 4){
+		else if (j == 3 and current_trigger == 3){
 			activate_main = true
 		}
-			
-		else if (j == current_trigger){
-			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
-			draw_text(c_x -200, c_y +80,dialogue1[j])
-			draw_text(c_x-200,c_y+95,dialogue2[j])
+		
+		else if (j == 4 and current_trigger == 4){
+			draw_sprite(spr_ter002, 0, c_x, c_y)
 			break;
+		}
+			
+		else if (j == 2 and current_trigger == 2){
+			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
+			if obj_player.hasAccess{
+				draw_text(c_x -200, c_y +80,dialogue2[0])
+			}
+			else{
+				draw_text(c_x -200, c_y +80,dialogue1[0])
+				access = true
+			}
+			
+		
 		}
 	}
 

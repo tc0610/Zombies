@@ -8,4 +8,7 @@ depth = obj_player.depth - 1
 if escapeKey{
 	responseOn = false
 	GAME_PAUSED = false
+	if access{
+		obj_player.hasAccess = true
+	}
 }

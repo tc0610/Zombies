@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"Object26",
+  "%Name":"obj_terminal2",
   "eventList":[],
   "managed":true,
-  "name":"Object26",
+  "name":"obj_terminal2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Terminal",
+    "path":"folders/Objects/Terminal.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
+    "name":"spr_ter000",
+    "path":"sprites/spr_ter000/spr_ter000.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
