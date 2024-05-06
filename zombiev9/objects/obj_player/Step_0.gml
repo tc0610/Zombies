@@ -219,6 +219,7 @@ if (!GAME_PAUSED){
 				obj_interact.current_trigger = i
 				obj_interact.responseOn = true
 				GAME_PAUSED = true
+				e_toggle = 2
 		        break;
 		    }
 		}
@@ -264,3 +265,4 @@ if (!GAME_PAUSED){
 	}
 	
 }
+

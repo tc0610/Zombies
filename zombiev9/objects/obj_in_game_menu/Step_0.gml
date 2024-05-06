@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
+depth = -1001
 
 x = obj_camera.x + camera_get_view_width(view_camera[0])/2
 y = obj_camera.y + camera_get_view_height(view_camera[0])/2

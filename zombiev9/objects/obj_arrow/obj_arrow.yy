@@ -1,22 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_splinters",
+  "%Name":"obj_arrow",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_splinters",
+  "name":"obj_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Objects/Enemy.yy",
+    "name":"obj_ui",
+    "path":"folders/Objects/obj_ui.yy",
   },
-  "parentObjectId":{
-    "name":"obj_enemy",
-    "path":"objects/obj_enemy/obj_enemy.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_walker",
-    "path":"sprites/spr_walker/spr_walker.yy",
+    "name":"spr_arrow",
+    "path":"sprites/spr_arrow/spr_arrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

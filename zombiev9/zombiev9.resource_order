@@ -26,6 +26,7 @@
     {"name":"Terminal","order":17,"path":"folders/Sprites/Terminal.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_arrow","order":2,"path":"objects/obj_arrow/obj_arrow.yy",},
     {"name":"obj_body1","order":2,"path":"objects/obj_body1/obj_body1.yy",},
     {"name":"obj_boss","order":3,"path":"objects/obj_boss/obj_boss.yy",},
     {"name":"obj_camera","order":6,"path":"objects/obj_camera/obj_camera.yy",},
@@ -38,7 +39,6 @@
     {"name":"obj_interact","order":3,"path":"objects/obj_interact/obj_interact.yy",},
     {"name":"obj_manager","order":10,"path":"objects/obj_manager/obj_manager.yy",},
     {"name":"obj_setting","order":1,"path":"objects/obj_setting/obj_setting.yy",},
-    {"name":"obj_sound_manager","order":13,"path":"objects/obj_sound_manager/obj_sound_manager.yy",},
     {"name":"obj_splinters","order":4,"path":"objects/obj_splinters/obj_splinters.yy",},
     {"name":"obj_stab","order":1,"path":"objects/obj_stab/obj_stab.yy",},
     {"name":"obj_terminal1","order":1,"path":"objects/obj_terminal1/obj_terminal1.yy",},
@@ -64,6 +64,7 @@
     {"name":"snd_ambience","order":4,"path":"sounds/snd_ambience/snd_ambience.yy",},
     {"name":"snd_door","order":2,"path":"sounds/snd_door/snd_door.yy",},
     {"name":"snd_rattle","order":3,"path":"sounds/snd_rattle/snd_rattle.yy",},
+    {"name":"spr_arrow","order":28,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"spr_bg","order":23,"path":"sprites/spr_bg/spr_bg.yy",},
     {"name":"spr_biL","order":7,"path":"sprites/spr_biL/spr_biL.yy",},
     {"name":"spr_biR","order":10,"path":"sprites/spr_biR/spr_biR.yy",},

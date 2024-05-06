@@ -1,5 +1,8 @@
 get_damaged_create(20,true)
 
+
+e_toggle = 1
+
 hasAccess = false
 hasControl = false
 

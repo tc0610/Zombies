@@ -7,7 +7,7 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":3,
+  "compression":0,
   "conversionMode":0,
   "duration":210.696,
   "name":"boss",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"boss.mp3",
   "type":0,
-  "volume":0.44,
+  "volume":1.0,
 }

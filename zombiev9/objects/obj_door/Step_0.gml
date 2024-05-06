@@ -7,7 +7,7 @@
 //	room_goto(rm_hallway)
 //}
 
-depth = -bbox_bottom
+depth = -10
 if state == dstates.closed{
 	sprite_index = spr_door
 }

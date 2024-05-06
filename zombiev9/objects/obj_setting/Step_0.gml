@@ -1,8 +1,14 @@
 
+depth = -1000
 
 x = obj_camera.x + (camera_get_view_width(view_camera[0])/2) 
 y = obj_camera.y + (camera_get_view_height(view_camera[0])/2) - 180
 
+if room == rm_lobby{
+	x = 650
+	y = 10
+	
+}
 
 
 
