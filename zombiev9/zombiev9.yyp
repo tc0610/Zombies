@@ -71,7 +71,6 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"object_damaging_1","path":"objects/object_damaging_1/object_damaging_1.yy",},},
     {"id":{"name":"object_damaging","path":"objects/object_damaging/object_damaging.yy",},},
-    {"id":{"name":"Object26","path":"objects/Object26/Object26.yy",},},
     {"id":{"name":"rm_control","path":"rooms/rm_control/rm_control.yy",},},
     {"id":{"name":"rm_end","path":"rooms/rm_end/rm_end.yy",},},
     {"id":{"name":"rm_hallway","path":"rooms/rm_hallway/rm_hallway.yy",},},

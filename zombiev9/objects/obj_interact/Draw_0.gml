@@ -21,11 +21,17 @@ if responseOn{
 			activate_main = true
 		}
 			
-		else if (j == current_trigger){
+		else if (j == 2 and current_trigger == 2){
 			draw_sprite(spr_dialogue, 0, c_x - 15, c_y + 95)
-			draw_text(c_x -200, c_y +80,dialogue1[j])
-			draw_text(c_x-200,c_y+95,dialogue2[j])
-			break;
+			if obj_player.hasAccess{
+				draw_text(c_x -200, c_y +80,dialogue2[0])
+			}
+			else{
+				draw_text(c_x -200, c_y +80,dialogue1[0])
+				access = true
+			}
+			
+		
 		}
 	}
 

@@ -45,7 +45,6 @@
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"object_damaging_1","order":8,"path":"objects/object_damaging_1/object_damaging_1.yy",},
     {"name":"object_damaging","order":5,"path":"objects/object_damaging/object_damaging.yy",},
-    {"name":"Object26","order":12,"path":"objects/Object26/Object26.yy",},
     {"name":"rm_control","order":4,"path":"rooms/rm_control/rm_control.yy",},
     {"name":"rm_end","order":7,"path":"rooms/rm_end/rm_end.yy",},
     {"name":"rm_hallway","order":5,"path":"rooms/rm_hallway/rm_hallway.yy",},
