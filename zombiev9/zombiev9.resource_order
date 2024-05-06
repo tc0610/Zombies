@@ -52,7 +52,6 @@
     {"name":"rm_lobby","order":6,"path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"rm_research","order":3,"path":"rooms/rm_research/rm_research.yy",},
     {"name":"rm_start","order":8,"path":"rooms/rm_start/rm_start.yy",},
-    {"name":"rm_tutorial","order":9,"path":"rooms/rm_tutorial/rm_tutorial.yy",},
     {"name":"chooseSpr","order":3,"path":"scripts/chooseSpr/chooseSpr.yy",},
     {"name":"MoveCollide","order":2,"path":"scripts/MoveCollide/MoveCollide.yy",},
     {"name":"weapon_creation","order":1,"path":"scripts/weapon_creation/weapon_creation.yy",},

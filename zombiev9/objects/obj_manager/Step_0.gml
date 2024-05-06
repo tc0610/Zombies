@@ -8,8 +8,7 @@ if room == rm_lobby{
 }
 
 if room == rm_start{
-	if (point_in_rectangle(mouse_x, mouse_y, 
-	start_button_x, start_button_y, start_button_x + b_w, start_button_y + b_h )) {
+	if (point_in_rectangle(mouse_x, mouse_y, _button_x, _button_y, _button_x + b_w, _button_y + b_h )) {
 		b_hovered = true
 		if (mouse_check_button_pressed(mb_left)) {
 			room_goto(Room1)
@@ -17,6 +16,21 @@ if room == rm_start{
 	}
 	else{
 		b_hovered = false
+	}
+	
+}
+
+
+//REPLAY Button
+if room == rm_end{
+	if (point_in_rectangle(mouse_x, mouse_y, _button_x, _button_y, _button_x + b_w, _button_y + b_h )) {
+		r_hovered = true
+		if (mouse_check_button_pressed(mb_left)) {
+			room_goto(rm_start)
+		}
+	}
+	else{
+		r_hovered = false
 	}
 	
 }
