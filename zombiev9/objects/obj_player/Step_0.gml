@@ -43,10 +43,10 @@ if (!GAME_PAUSED){
 			vspd = 0
 		}
 		
-		if hspd != 0 or vspd != 0{
+		if hspd != 0 or vspd != 0 and state != pstates.dying{
 			moving = true
 			if !audio_is_playing(footstep) and !sneak{
-				audio_play_sound(footstep, 10, true);
+				audio_play_sound(footstep, 10, false);
 			}
 		}else{
 			moving = false
@@ -54,18 +54,20 @@ if (!GAME_PAUSED){
 		}
 		
 		//Sneak
-		if !attacking{
-			if sneakKey{
-				if sneak{
-					state = pstates.walking
-					moveSpd = walkSpd
-					sneak = 0
-				}else{
-					state = pstates.sneaking
-					audio_stop_sound(footstep)
-					moveSpd = sneakSpd
-					sneak = 1
-				}
+		if state != pstates.dying{
+			if !attacking{
+				if sneakKey{
+					if sneak{
+						state = pstates.walking
+						moveSpd = walkSpd
+						sneak = 0
+					}else{
+						state = pstates.sneaking
+						audio_stop_sound(footstep)
+						moveSpd = sneakSpd
+						sneak = 1
+					}
+				}	
 			}
 		}
 		depth = -bbox_bottom
@@ -75,10 +77,7 @@ if (!GAME_PAUSED){
 	get_damaged(obj_damagePlayer,true)
 	
 	if hp <=0{
-		room_restart()
-		hp = maxhp
-		x = startx
-		y = starty
+		state = pstates.dying
 	}
 
 	//Aiming
@@ -91,7 +90,7 @@ if (!GAME_PAUSED){
 
 	//Spriting
 	#region
-	if !attacking{
+	if !attacking and state != pstates.dying{
 		face = round(aimDir/90)
 	}
 	
@@ -113,14 +112,28 @@ if (!GAME_PAUSED){
 		}
 	}else if state == pstates.slashing{
 		sprite_index = slash[face]
+	}else if state == pstates.dying{
+		dyingtimer++
+		audio_stop_sound(footstep)
+		sprite_index = dying[face]
+		if dyingtimer >= dyingmax{
+			dyingtimer = 0
+			room_restart()
+			hp = maxhp
+			x = startx
+			y = starty
+			state = pstates.walking
+		}
 	}
 	
 	//Move
-	if keyboard_check(ord("W"))
-	or keyboard_check(ord("A"))
-	or keyboard_check(ord("S"))
-	or keyboard_check(ord("D")){        
-		MoveCollide()
+	if state != pstates.dying{
+		if keyboard_check(ord("W"))
+		or keyboard_check(ord("A"))
+		or keyboard_check(ord("S"))
+		or keyboard_check(ord("D")){        
+			MoveCollide()
+		}
 	}
 	
 	#endregion
@@ -137,6 +150,7 @@ if (!GAME_PAUSED){
 
 	//Shooting
 	#region
+	if state != pstates.dying{
 		if shootTimer > 0{
 			shootTimer--	
 		}
@@ -215,5 +229,5 @@ if (!GAME_PAUSED){
 		}
 	}
 	
-
+	}
 }

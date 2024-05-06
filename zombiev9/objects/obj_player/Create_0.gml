@@ -23,13 +23,17 @@ hspd = 0
 x_remainder = 0
 y_remainder = 0
 
+dyingtimer = 0
+dyingmax = 120
+
 state = pstates.walking
 
 enum pstates {
 	walking,
 	slashing,
 	sneaking,
-	charging
+	charging,
+	dying,
 }
 
 sneak = 0
@@ -79,7 +83,10 @@ uncharge[1] = spr_unchargeB
 uncharge[2] = spr_unchargeL
 uncharge[3] = spr_unchargeF
 
-
+dying[0] = spr_unchargeR
+dying[1] = spr_unchargeB
+dying[2] = spr_unchargeL
+dying[3] = spr_unchargeF
 
 
 centerYOffset = -20
