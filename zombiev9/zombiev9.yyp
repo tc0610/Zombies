@@ -42,7 +42,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.2.0.132",
   },
   "name":"zombiev9",
   "resources":[
@@ -63,6 +63,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_setting","path":"objects/obj_setting/obj_setting.yy",},},
     {"id":{"name":"obj_solidwall","path":"objects/obj_solidwall/obj_solidwall.yy",},},
+    {"id":{"name":"obj_sound_manager","path":"objects/obj_sound_manager/obj_sound_manager.yy",},},
     {"id":{"name":"obj_splinters","path":"objects/obj_splinters/obj_splinters.yy",},},
     {"id":{"name":"obj_stab","path":"objects/obj_stab/obj_stab.yy",},},
     {"id":{"name":"obj_terminal0","path":"objects/obj_terminal0/obj_terminal0.yy",},},
@@ -87,6 +88,7 @@
     {"id":{"name":"MoveCollide","path":"scripts/MoveCollide/MoveCollide.yy",},},
     {"id":{"name":"weapon_creation","path":"scripts/weapon_creation/weapon_creation.yy",},},
     {"id":{"name":"footstep","path":"sounds/footstep/footstep.yy",},},
+    {"id":{"name":"boss","path":"sounds/boss/boss.yy",},},
     {"id":{"name":"slashsnd","path":"sounds/slashsnd/slashsnd.yy",},},
     {"id":{"name":"snd_ambience","path":"sounds/snd_ambience/snd_ambience.yy",},},
     {"id":{"name":"snd_door","path":"sounds/snd_door/snd_door.yy",},},
