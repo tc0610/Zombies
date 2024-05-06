@@ -65,6 +65,7 @@
     {"name":"spr_bg","order":23,"path":"sprites/spr_bg/spr_bg.yy",},
     {"name":"spr_biL","order":7,"path":"sprites/spr_biL/spr_biL.yy",},
     {"name":"spr_biR","order":10,"path":"sprites/spr_biR/spr_biR.yy",},
+    {"name":"spr_blob","order":11,"path":"sprites/spr_blob/spr_blob.yy",},
     {"name":"spr_blood","order":5,"path":"sprites/spr_blood/spr_blood.yy",},
     {"name":"spr_bRollL","order":8,"path":"sprites/spr_bRollL/spr_bRollL.yy",},
     {"name":"spr_bRollR","order":9,"path":"sprites/spr_bRollR/spr_bRollR.yy",},
