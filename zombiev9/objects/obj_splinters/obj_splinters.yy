@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_walker",
-    "path":"sprites/spr_walker/spr_walker.yy",
+    "name":"spr_blob",
+    "path":"sprites/spr_blob/spr_blob.yy",
   },
   "spriteMaskId":null,
   "visible":true,
