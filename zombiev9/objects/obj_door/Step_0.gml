@@ -36,9 +36,4 @@ if state == dstates.open{
 	
 }
 
-if opened{
-	instance_deactivate_object(obj_wall)	
-}
-else{
-	instance_activate_object(obj_wall)	
-}
+

@@ -4,3 +4,4 @@
 
 show_text = false
 text = noone
+wall_id = noone

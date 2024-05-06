@@ -42,7 +42,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"zombiev9",
   "resources":[
@@ -193,11 +193,11 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"rm_hallway","path":"rooms/rm_hallway/rm_hallway.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_lobby","path":"rooms/rm_lobby/rm_lobby.yy",},},
     {"roomId":{"name":"rm_research","path":"rooms/rm_research/rm_research.yy",},},
     {"roomId":{"name":"rm_control","path":"rooms/rm_control/rm_control.yy",},},
-    {"roomId":{"name":"rm_hallway","path":"rooms/rm_hallway/rm_hallway.yy",},},
     {"roomId":{"name":"rm_end","path":"rooms/rm_end/rm_end.yy",},},
   ],
   "templateType":"game",

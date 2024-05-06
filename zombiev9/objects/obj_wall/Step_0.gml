@@ -3,7 +3,7 @@
 
 var escapeKey = keyboard_check(ord("C"))
 
-if collision_circle(x,y,25,obj_player,false,true) and obj_player.confirmKey{
+if collision_circle(x,y,50,obj_player,false,true) and obj_player.confirmKey{
 	if !obj_player.hasAccess{
 		show_text = true 
 	}
@@ -15,3 +15,4 @@ if collision_circle(x,y,25,obj_player,false,true) and obj_player.confirmKey{
 if escapeKey{
 	show_text = false
 }
+

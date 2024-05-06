@@ -234,4 +234,30 @@ if (!GAME_PAUSED){
 	}
 	
 	}
+	
+	var target_wall1 = noone;
+	var target_wall2 = noone;
+	
+	for (var n = 0; n < 2; n++){
+		var inst = instance_find(obj_wall, n)
+		if (inst.wall_id == 1 and hasAccess){
+			target_wall1 = inst
+			
+			
+		}
+		if (inst.wall_id == 2 and hasControl){
+			target_wall2 = inst
+			
+			
+		}
+	}
+	if (target_wall1 != noone) {
+		instance_deactivate_instance(target_wall1);
+	
+	}
+	if (target_wall2 != noone) {
+		instance_deactivate_instance(target_wall2);
+	}
+	
+	
 }
