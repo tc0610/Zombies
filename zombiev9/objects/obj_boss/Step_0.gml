@@ -5,9 +5,9 @@ x += hspd
 y += vspd
 
 if direction > 90 and direction < 270{
-	face = 1	
+	face = 0	
 }else{
-	face = -1	
+	face = 1	
 }
 
 if place_meeting(x,y,obj_damageEnemy){
@@ -16,6 +16,7 @@ if place_meeting(x,y,obj_damageEnemy){
 
 if state == states.idle{
 	idletimer--
+	sprite_index = idle[face]
 	var newstate = random_range(0,2)
 	if idletimer <= 0{
 		idletimer = idletimermax
@@ -29,6 +30,7 @@ if state == states.idle{
 
 if state == states.charge{
 	acceltimer--
+	sprite_index = roll[face]
 	if moveSpd < maxSpd and acceltimer <= 0{
 		moveSpd+= accel	
 		acceltimer = acceltimerMax

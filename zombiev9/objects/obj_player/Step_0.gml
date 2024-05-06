@@ -116,6 +116,10 @@ if (!GAME_PAUSED){
 		dyingtimer++
 		audio_stop_sound(footstep)
 		sprite_index = dying[face]
+		if (image_index >= sprite_get_number(sprite_index) - 1) {
+			// stop animation after 1 run
+			sprite_set_speed(sprite_index, 0, spritespeed_framespersecond);
+		}
 		if dyingtimer >= dyingmax{
 			dyingtimer = 0
 			room_restart()
